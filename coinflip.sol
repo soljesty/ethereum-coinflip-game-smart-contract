@@ -38,5 +38,5 @@ contract CoinFlip {
   function withdraw() public {
     require(player == msg.sender, 'Only the player can withdraw the bet amount');
     require(!result, 'You cannot withdraw the bet amount if you won');
-   
+  }
 }
