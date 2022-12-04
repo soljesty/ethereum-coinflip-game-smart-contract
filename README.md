@@ -7,3 +7,9 @@ The contract includes several methods to implement the different steps of the co
 The contract also includes several checks to ensure that only the player can perform certain actions, and that the actions are performed correctly. For example, the `placeBet` method checks that the player is sending the correct amount of ether, and the flip method checks that only the player can flip the coin.
 
 Overall, this contract provides a basic implementation of a coin flip game on the Ethereum blockchain.
+
+# Order of Execution
+
+In this contract, the order of execution is enforced by using the `require` statement in the different methods. For example, the `flip` method includes a `require` statement that checks that the player has placed a bet before flipping the coin, and the `withdraw` method includes a `require` statement that checks that the player has won the coin flip before withdrawing the bet amount. Additionally, the fallback function includes a `require` statement that checks that the player has lost the coin flip before transferring the bet amount to the contract owner.
+
+These checks ensure that the contract is executed in the correct order, and that the player can only perform actions that are valid in the current state of the contract. For example, the `flip` method cannot be called before the `placeBet` method, and the `withdraw` method cannot be called before the `flip` method.
